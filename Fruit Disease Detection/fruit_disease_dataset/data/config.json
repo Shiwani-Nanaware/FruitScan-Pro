@@ -1,0 +1,21 @@
+{
+    "image_type": "rgb",
+    "img_dim": 256,
+    "labels": [
+        "APPLE_blotch",
+        "APPLE_normal",
+        "APPLE_rot",
+        "APPLE_scab",
+        "GUAVA_pytopthora",
+        "GUAVA_root",
+        "GUAVA_scab",
+        "LEMON_canker",
+        "LEMON_healthy",
+        "LEMON_mold",
+        "LEMON_scab"
+    ],
+    "nb_channels": 3,
+    "nb_classes": 11,
+    "nb_eval_data": 2388,
+    "nb_train_data": 5460
+}

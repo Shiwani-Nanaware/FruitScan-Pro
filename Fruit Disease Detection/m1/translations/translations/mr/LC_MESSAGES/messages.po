@@ -1,0 +1,28 @@
+# Marathi translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-02-17 20:12+0530\n"
+"PO-Revision-Date: 2025-02-17 20:14+0530\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: mr\n"
+"Language-Team: mr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+msgid "A disease affecting apple trees characterized by dark, irregular blotches on the fruit's surface."
+msgstr "सफरचंद झाडावर प्रभाव टाकणारा रोग, जो फळाच्या पृष्ठभागावर गडद, अनियमित डाग तयार करतो."
+
+msgid "Healthy state of apple trees without any significant diseases or abnormalities."
+msgstr "सफरचंद झाडांची निरोगी स्थिती, कोणत्याही मोठ्या रोग किंवा असामान्यतेशिवाय."
+
+msgid "Password does not match"
+msgstr "संकेतशब्द जुळत नाही"
+

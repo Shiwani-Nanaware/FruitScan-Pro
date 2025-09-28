@@ -1,0 +1,10 @@
+{
+    "title": "Fruit Disease Information",
+    "fruit": "Fruit",
+    "fruit_disease": "Fruit Disease",
+    "description": "Description",
+    "solution": "Solution",
+    "popup1": "Attention Farmers: Check your crops regularly for diseases!",
+    "popup2": "Reminder: Use organic pesticides for a healthy harvest!",
+    "popup3": "Tip: Rotate crops to prevent soil depletion and diseases!"
+}

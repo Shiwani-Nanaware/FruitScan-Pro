@@ -1,0 +1,273 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Fruit Disease Information</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        #header {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        #content {
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-container {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            background-color: #38AF00;
+            color: #fff;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #1e5e00;
+        }
+
+        .inp {
+            display: none;
+        }
+
+        #detectbtn {
+            width: 100%;
+            border: none;
+            background-color: #38AF00;
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #detectbtn:hover {
+            background-color: #1e5e00;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Fruitease</h1>
+    </div>
+
+    <div id="content">
+        <div class="card">
+            {% if fruit_name != "" %}
+                <h3>Fruit: {{ fruit_name }}</h3>
+            {% endif %}
+
+            {% if fruit_image != "" %}
+                <div class="img-container"><img src="{{ url_for('static', filename='uploads/' + fruit_image) }}" alt=""></div>
+            {% endif %}
+
+            {% if fruit_disease != "" %}
+                <h3>Fruit Disease: {{ fruit_disease }}</h3>
+                <hr>
+            {% endif %}
+
+            {% if disease_description != "" %}
+                <h3>Description</h3>
+                <p>{{ disease_description["disease information"] }}</p>
+                <hr>
+                <h3>Solution</h3>
+                <ul>
+                    {% for i in disease_description["solution"] %}
+                        <li>{{ i }}</li><br>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Fruit Disease Information</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #header {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        #content {
+            max-width: 600px;
+            width: 90%;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 5px 5px 10px #0f0f0f, -5px -5px 10px #2a2a2a;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .img-container {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 15px auto;
+            box-shadow: 0px 5px 15px rgba(0, 255, 0, 0.3);
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        label, #detectbtn {
+            display: block;
+            font-size: 16px;
+            background: linear-gradient(145deg, #38AF00, #2e8b00);
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 2px 2px 5px #0a4500;
+        }
+
+        label:hover, #detectbtn:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 4px 10px #0a4500;
+        }
+
+        .inp {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Fruitease</h1>
+    </div>
+
+    <div id="content">
+        <div class="card">
+            {% if fruit_name != "" %}
+                <h3>Fruit: {{ fruit_name }}</h3>
+            {% endif %}
+
+            {% if fruit_image != "" %}
+                <div class="img-container">
+                    <img src="{{ url_for('static', filename='uploads/' + fruit_image) }}" alt="">
+                </div>
+            {% endif %}
+
+            {% if fruit_disease != "" %}
+                <h3>Fruit Disease: {{ fruit_disease }}</h3>
+                <hr>
+            {% endif %}
+
+            {% if disease_description != "" %}
+                <h3>Description</h3>
+                <p>{{ disease_description["disease information"] }}</p>
+                <hr>
+                <h3>Solution</h3>
+                <ul>
+                    {% for i in disease_description["solution"] %}
+                        <li>{{ i }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

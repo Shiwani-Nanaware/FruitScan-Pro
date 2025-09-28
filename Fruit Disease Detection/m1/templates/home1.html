@@ -1,0 +1,90 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us | Fruit Disease Detection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: rgba(30, 30, 30, 0.9);
+      padding: 15px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: #00c853;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 100px auto 50px;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00c853;
+      margin-bottom: 30px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 18px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('home') }}">About</a></li>
+    <li><a href="{{ url_for('service') }}">Services</a></li>
+    <li><a href="{{ url_for('blog') }}">Blog</a></li>
+    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h1>About Our Project</h1>
+  <p>
+    Fruit Disease Detection is a smart agricultural tool designed to help farmers quickly identify and treat common diseases in fruits. By leveraging AI and machine learning, our system analyzes images of fruits and provides accurate disease diagnoses, multilingual reports, and prevention tips.
+  </p>
+  <p>
+    This project was created by a team of passionate developers who believe in empowering the agricultural community through technology. Whether you're a small farmer or a large cultivator, our goal is to make disease detection accessible, reliable, and efficient.
+  </p>
+</div>
+
+</body>
+</html>

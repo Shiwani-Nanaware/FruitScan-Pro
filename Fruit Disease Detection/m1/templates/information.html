@@ -1,0 +1,396 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Fruit Disease Information</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('{{ url_for('static', filename='t1rtzoa34if2meekhuhvhwblq9cnysopgty5ng2ecgc6qqna6vztdnrafujisoot-o.avif') }}') no-repeat center center/cover;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #header {
+            background: linear-gradient(145deg, #4CAF50, #388E3C);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #2E7D32;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        #languageSwitcher {
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2em;
+            border: none;
+            outline: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        #languageSwitcher:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        #content {
+            max-width: 800px;
+            width: 90%;
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 0.6s ease-in-out;
+            border: 1px solid #4CAF50;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .popup-message {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 20px rgba(0, 255, 0, 0.5);
+            text-align: center;
+            border: 2px solid #4CAF50;
+            font-weight: 700;
+            font-size: 18px;
+            animation: blink 3s infinite;
+        }
+
+        .popup1 { bottom: 20px; left: 50%; transform: translateX(-50%); }
+        .popup2 { top: 20px; right: 20px; }
+        .popup3 { bottom: 50px; left: 20px; }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        h3 {
+            font-weight: 700;
+            font-size: 1.8em;
+            color: #388E3C;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        ul {
+            font-size: 1.1em;
+            color: #444;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Fruitease</h1>
+         <select id="languageSwitcher">
+            <option value="en">English</option>
+            <option value="mr">मराठी</option>
+        </select>
+    </div>
+
+    <div id="content">
+        <div class="card">
+            {% if fruit_name != "" %}
+                <h3>Fruit: {{ fruit_name }}</h3>
+            {% endif %}
+
+            {% if fruit_image != "" %}
+                <div class="img-container"><img src="{{ url_for('static', filename='uploads/' + fruit_image) }}" alt=""></div>
+            {% endif %}
+
+            {% if fruit_disease != "" %}
+                <h3>Fruit Disease: {{ fruit_disease }}</h3>
+                <hr>
+            {% endif %}
+
+            {% if disease_description != "" %}
+                <h3>Description</h3>
+                <p>{{ disease_description["disease information"] }}</p>
+                <hr>
+                <h3>Solution</h3>
+                <ul>
+                    {% for i in disease_description["solution"] %}
+                        <li>{{ i }}</li><br>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+    <h3 id="fruit">Fruit: {{ fruit_name }}</h3>
+    <h3 id="fruit_disease">Fruit Disease: {{ fruit_disease }}</h3>
+    <h3 id="description">Description</h3>
+    <h3 id="solution">Solution</h3>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const languageSwitcher = document.getElementById("languageSwitcher");
+            const elementsToTranslate = {
+                "title": document.querySelector("#header h1"),
+                "fruit": document.querySelector("#fruit"),
+                "fruit_disease": document.querySelector("#fruit_disease"),
+                "description": document.querySelector("#description"),
+                "solution": document.querySelector("#solution"),
+                "popup1": document.querySelector(".popup1"),
+                "popup2": document.querySelector(".popup2"),
+                "popup3": document.querySelector(".popup3")
+            };
+
+            function loadLanguage(lang) {
+                fetch(`/static/translations/${lang}.json`)
+                    .then(response => response.json())
+                    .then(translations => {
+                        for (const key in elementsToTranslate) {
+                            if (elementsToTranslate[key]) {
+                                elementsToTranslate[key].innerText = translations[key];
+                            }
+                        }
+                    })
+                    .catch(error => console.error("Error loading language file:", error));
+            }
+
+            // Set default language
+            const defaultLang = localStorage.getItem("language") || "en";
+            languageSwitcher.value = defaultLang;
+            loadLanguage(defaultLang);
+
+            // Change language on selection
+            languageSwitcher.addEventListener("change", function () {
+                const selectedLang = this.value;
+                localStorage.setItem("language", selectedLang);
+                loadLanguage(selectedLang);
+            });
+        });
+    </script>
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Fruit Disease Information</title>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('{{ url_for('static', filename='t1rtzoa34if2meekhuhvhwblq9cnysopgty5ng2ecgc6qqna6vztdnrafujisoot-o.avif') }}') no-repeat center center/cover;
+            color: #333;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #header {
+            background: linear-gradient(145deg, #4CAF50, #388E3C);
+            color: #fff;
+            padding: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #languageSwitcher {
+            background-color: #000;
+            color: #fff;
+            padding: 8px 15px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        /* Google Translate Widget Styling - Black theme */
+        .goog-te-combo {
+            background-color: #000 !important;
+            color: #fff !important;
+            border: 1px solid #333 !important;
+            border-radius: 4px !important;
+            padding: 4px 8px !important;
+        }
+
+        .goog-te-combo:hover {
+            background-color: #1a1a1a !important;
+            border-color: #555 !important;
+        }
+
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+        }
+
+        .goog-te-gadget-simple .goog-te-menu-value {
+            color: #fff !important;
+        }
+
+        .goog-te-gadget-simple .goog-te-menu-value span {
+            color: #fff !important;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>Fruit Disease Information</h1>
+         <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </div>
+
+    <div id="content" class="card">
+        {% if fruit_name != "" %}
+            <h3>Fruit: {{ fruit_name }}</h3>
+        {% endif %}
+
+        {% if fruit_image != "" %}
+            <img src="{{ url_for('static', filename='uploads/' + fruit_image) }}" alt="">
+        {% endif %}
+
+        {% if fruit_disease != "" %}
+            <h3>Fruit Disease: {{ fruit_disease }}</h3>
+            <hr>
+        {% endif %}
+
+        {% if disease_description != "" %}
+            <h3>Description</h3>
+            <p>{{ disease_description["disease information"] }}</p>
+            <hr>
+            <h3>Solution</h3>
+            <ul>
+                {% for i in disease_description["solution"] %}
+                    <li>{{ i }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <!-- Google Translate Integration -->
+    <div id="google_translate_element"></div>
+
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ 
+                pageLanguage: 'en', 
+                includedLanguages: 'en,mr,hi,es,fr',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE 
+            }, 'google_translate_element');
+        }
+
+        function triggerGoogleTranslate(lang) {
+            const selectEl = document.querySelector(".goog-te-combo");
+
+            if (selectEl) {
+                selectEl.value = lang;
+                selectEl.dispatchEvent(new Event("change"));
+            } else {
+                alert("Google Translate not loaded. Please refresh the page.");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const langSwitcher = document.getElementById("languageSwitcher");
+
+            langSwitcher.addEventListener("change", function () {
+                triggerGoogleTranslate(langSwitcher.value);
+            });
+
+            setTimeout(() => {
+                if (!document.querySelector(".goog-te-combo")) {
+                    alert("Google Translate failed to load. Check your internet connection.");
+                }
+            }, 5000);
+        });
+    </script>
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <div class="footer">
+        <p>© 2023 Fruit Disease Information. All rights reserved.</p>
+    </div>
+</body>
+</html>

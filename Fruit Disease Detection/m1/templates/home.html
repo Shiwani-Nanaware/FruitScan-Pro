@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Fruit Disease Detection</title>
+
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
+      color: #c8facc;
+    }
+
+    header {
+      background-color: #0d0d0d;
+      color: white;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 4.5em;
+      font-weight: 800;
+      background: linear-gradient(45deg, #00e676, #00c853);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #a5d6a7;
+      margin-top: 0.5rem;
+    }
+
+    #google_translate_element {
+      font-size: 14px;
+    }
+
+    /* Google Translate Widget Styling - Black theme */
+    .goog-te-combo {
+      background-color: #000 !important;
+      color: #fff !important;
+      border: 1px solid #333 !important;
+      border-radius: 4px !important;
+      padding: 4px 8px !important;
+    }
+
+    .goog-te-combo:hover {
+      background-color: #1a1a1a !important;
+      border-color: #555 !important;
+    }
+
+    .goog-te-gadget-simple {
+      background-color: transparent !important;
+      border: none !important;
+    }
+
+    .goog-te-gadget-simple .goog-te-menu-value {
+      color: #fff !important;
+    }
+
+    .goog-te-gadget-simple .goog-te-menu-value span {
+      color: #fff !important;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+      background: #1b1b1b;
+      box-shadow: 0 0 20px rgba(0,255,0,0.1);
+      border-radius: 10px;
+      margin-top: -40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    section h2 {
+      color: #00e676;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      border-left: 5px solid #66bb6a;
+      padding-left: 10px;
+    }
+
+    section p {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #e0f2f1;
+    }
+
+    .guide-box {
+      background: #263238;
+      padding: 1rem 1.5rem;
+      border-left: 6px solid #00c853;
+      border-radius: 8px;
+      margin-top: 1rem;
+      color: #e8f5e9;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    label {
+      font-weight: 600;
+      color: #e0f2f1;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    select {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      background: #1b1b1b;
+      color: #c8facc;
+      border: 2px solid #00e676;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #a5d6a7;
+      background: #0f0f0f;
+      margin-top: 2rem;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 1.2rem;
+      left: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #00c853;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px #1b5e20;
+    }
+
+    .back-button:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px #1b5e20;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="back-button" onclick="window.history.back()">← Back</button>
+    <h1>About Our Project</h1>
+    <p>Fruit Disease Detection Using AI</p>
+    <div id="google_translate_element"></div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Project Overview</h2>
+      <p>
+        Our Fruit Disease Detection project utilizes cutting-edge artificial intelligence and machine learning techniques to detect common fruit diseases from images. The solution is designed to be simple, fast, and accessible — helping farmers and agricultural professionals identify diseases early and take preventive actions. By uploading an image of a fruit, users receive a detailed diagnosis and suggested remedies in real time.
+      </p>
+    </section>
+
+    <section>
+      <h2>Team Members</h2>
+      <div style="color: #e0f2f1; font-size: 1.1rem; line-height: 2;">
+        <p><strong>1. Shiwani Nanaware</strong></p>
+        <p><strong>2. Rituja Malode</strong></p>
+        <p><strong>3. Madhura Patil</strong></p>
+        <p><strong>4. Shraddha More</strong></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is to empower farmers with accessible digital tools that enhance their productivity and crop health management. With this AI-driven platform, we aim to bridge the gap between technology and agriculture, ensuring farmers can take quick action to protect their crops. The system supports multiple languages and is optimized for rural connectivity challenges.
+      </p>
+    </section>
+
+    <section>
+      <h2>Future Scope</h2>
+      <p>
+        We plan to integrate more features like voice-based support, disease tracking using maps, and chatbot assistance. A mobile app and offline mode will make the platform even more versatile. The long-term goal is to build a comprehensive agriculture assistant that supports sustainable farming and improves food security globally.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Fruit Disease Detection Project
+  </footer>
+
+  <!-- Google Translate Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,mr,fr,es,zh-CN',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <script type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
+
+
+</body>
+</html>
